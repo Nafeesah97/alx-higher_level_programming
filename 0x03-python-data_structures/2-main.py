@@ -6,3 +6,6 @@ idx = 3
 new_element = 9
 new_list = replace_in_list(my_list, idx, new_element)
 
+print(new_list)
+print(my_list)
+
