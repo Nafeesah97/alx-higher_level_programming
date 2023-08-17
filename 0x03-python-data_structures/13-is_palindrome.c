@@ -47,5 +47,15 @@ int is_palindrome(listint_t **head)
 		left = left->next;
 		right = right->next;
 	}
+	current = (*head)->next;
+	prev = NULL;
+	while (current != NULL)
+	{
+		next_node = current->next;
+        	current->next = prev;
+        	prev = current;
+        	current = next_node;
+	}
+	(*head)->next = prev;
 	return (1);
 }
