@@ -18,10 +18,10 @@ def list_division(my_list_1, my_list_2, list_length):
                 print("division by 0")
             else:
                 res_list.append(res)
-        if len(res_list) < list_length:
-            print("out of range")
-            res_list.extend([0] * (list_length - len(res_list)))
     except Exception:
         pass
     finally:
-        return res_list
+        if len(res_list) < list_length:
+            print("out of range")
+            res_list.extend([0] * (list_length - len(res_list)))
+        return res_list[:list_length]
