@@ -21,8 +21,6 @@ class Square(object):
         >>> my_square = Square(90)
 
     """
-
-
     def __init__(self, size=0):
         """
         initializes a square instance.
