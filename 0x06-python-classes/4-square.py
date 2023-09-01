@@ -59,7 +59,6 @@ class Square(object):
             raise ValueError("size must be >= 0")
         self.__size = value
 
-
     def area(self):
         """
         finds area of the square
