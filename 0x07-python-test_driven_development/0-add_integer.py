@@ -13,7 +13,3 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer or b must be an integer")
     result = int(a) + int(b)
     return result
-
-if __name__ = '__main__':
-    import doctest
-    doctest.testfile()
