@@ -1,0 +1,45 @@
+def add_integer(a, b=98):
+    """
+    Add two numbers (integers or floats) together.
+
+    Args:
+	a(int or float): The first number
+	b(int or float): The second number
+	
+    Returns:
+	int: The result of addition
+
+    Examles:
+	>>> add_integer(1, 2)
+    	3
+    	>>> add_integer(-1, 2)
+    	1
+    	>>> add_integer(1)
+    	99
+    	>>> add_integer(-50)
+    	48
+    	>>> add_integer(None)
+    	Traceback (most recent call last):
+	    ...
+        TypeError: a must be an integer or b must be an integer
+        >>> add_integer(4, "School")
+        Traceback (most recent call last):
+	    ...
+        TypeError: a must be an integer or b must be an integer
+        >>> add_integer(1.5, 2)
+        3
+        >>> add_integer(1, 5.8)
+        6
+        >>> add_integer( , 2)
+        Traceback (most recent call last):
+       	    ...
+        TypeError: a must be an integer or b must be an integer
+        >>> add_integer(1.6, 0.4)
+        1
+        >>> add_integer(-1.7, -4.8)
+        -5
+	"""
+	if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+		raise TypeError("a must be an integer or b must be an integer")
+	result = int(a) + int(b)
+	return result
