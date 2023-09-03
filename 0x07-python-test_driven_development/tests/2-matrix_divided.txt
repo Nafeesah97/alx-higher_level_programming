@@ -1,0 +1,77 @@
+The ``2-matrix_divided.txt`` module
+===================================
+
+Using ``matrix_divided``
+-----------------------
+
+First import ``matrix_divided`` from the ``2-matrix_divided`` module.
+::
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it
+::
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 2)
+	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+Throws TypeError when matrix is not integers/floats
+::
+	>>> matrix_divided([['the', 4, 5], [6, 'scholl', 90]], 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Throws TypeError when matrix is not a list
+::
+	>>> matrix_divided((1, 2), 0.5)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Throws TypeError when row of matrix is not the same size
+::
+	>>> matrix_divided([[3, 6, 8], [2, 9], [12]], 3)
+	Traceback (most recent call last):
+        ...
+        TypeError: Each row of the matrix must have the same size
+
+Throws TypeError if div is not integer or float.
+::
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 'th')
+	Traceback (most recent call last):
+        ...
+        TypeError: div must be a number
+
+Throws a ZeroDivisionError if div is 0.
+::
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 0)
+	Traceback (most recent call last):
+        ...
+        TypeError: division by zero
+
+Throws TypeError if matrix is None.
+::
+	>>> matrix_divided(None, 4)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Throws TypeError when no argument is provided.
+::
+	>>> matrix_divided()
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Throws a TypeError if div is missing
+::
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]])
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Throws OverflowError when float infinity is passed.
+::
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], float('inf'))
+	Traceback (most recent call last):
+	...
+	OverflowError:'div' cannot be float infinity
