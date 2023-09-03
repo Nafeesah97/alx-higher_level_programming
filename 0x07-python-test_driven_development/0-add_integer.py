@@ -9,11 +9,9 @@ def add_integer(a, b=98):
     """
     Adds 2 integers.
     """
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("a must be an integer or b must be an integer")
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
     result = int(a) + int(b)
     return result
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testfile("0-add_integer.txt")
