@@ -1,0 +1,35 @@
+This module uses the 5-text_indentation.py
+==========================================
+
+The library contains a function called
+``text_indentation``
+
+Firstly, we need to import our library
+::
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it.
+::
+	>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit.""")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	<BLANKLINE>
+
+if text is not string.
+::
+	>>> text_indentation(567)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+if argument is empty.
+::
+	>>> text_indentation()
+	Traceback (most recent call last):
+        ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+If argument has empty spaces at the beginning and end
+::
+	>>> text_indentation("""   Hey! My name is Robert Amoah    """)
+	Hey! My name is Robert Amoah

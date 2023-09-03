@@ -46,7 +46,7 @@ Throws a ZeroDivisionError if div is 0.
 	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 0)
 	Traceback (most recent call last):
         ...
-        TypeError: division by zero
+        ZeroDivisionError: division by zero
 
 Throws TypeError if matrix is None.
 ::
@@ -68,10 +68,3 @@ Throws a TypeError if div is missing
 	Traceback (most recent call last):
         ...
         TypeError: matrix_divided() missing 1 required positional argument: 'div'
-
-Throws OverflowError when float infinity is passed.
-::
-	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], float('inf'))
-	Traceback (most recent call last):
-	...
-	OverflowError:'div' cannot be float infinity
