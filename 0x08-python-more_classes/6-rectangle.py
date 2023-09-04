@@ -7,7 +7,6 @@ Author: nafeesah
 
 
 class Rectangle:
-    number_of_instances = 0
     """
     Represents a rectangle
 
@@ -19,6 +18,8 @@ class Rectangle:
         area(): Finds the area of rectangle
         perimeter(): Finds the perimeter of rectangle
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -75,4 +76,3 @@ class Rectangle:
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
