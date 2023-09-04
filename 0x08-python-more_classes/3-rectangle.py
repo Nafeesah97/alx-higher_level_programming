@@ -64,5 +64,5 @@ class Rectangle:
             return ""
         rectangle_str = ""
         for i in range(self.height):
-             rectangle_str += ('#' * self.width) + '\n'
+            rectangle_str += ('#' * self.width) + '\n'
         return rectangle_str.rstrip("\n")
