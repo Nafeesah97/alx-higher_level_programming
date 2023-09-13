@@ -64,3 +64,29 @@ Try area()
         Traceback (most recent call last):
         ...
 	Exception: area() is not implemented
+
+Throws a valueerror when value is bool
+::
+        >>> bg.integer_validator("my_int", True)
+
+Throws a valueerror when value is list
+::
+        >>> bg.integer_validator("my_int", [3])
+        Traceback (most recent call last):
+        ...
+        TypeError: my_int must be an integer
+
+Throws a valueerror when value is tuple
+::
+        >>> bg.integer_validator("my_int", (3,))
+        Traceback (most recent call last):
+        ...
+        TypeError: my_int must be an integer
+
+Throws a valueerror when value is str
+::
+        >>> bg.integer_validator("my_int", "3")
+        Traceback (most recent call last):
+        ...
+        TypeError: my_int must be an integer
+
