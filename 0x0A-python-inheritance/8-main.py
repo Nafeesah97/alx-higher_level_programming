@@ -2,6 +2,7 @@
 Rectangle = __import__('8-rectangle').Rectangle
 
 r = Rectangle(3, 5)
+b = BaseGeometry()
 
 print(r)
 print(dir(r))
@@ -15,3 +16,5 @@ try:
     r2 = Rectangle(4, True)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
+
+print(issubclass(r, b))
