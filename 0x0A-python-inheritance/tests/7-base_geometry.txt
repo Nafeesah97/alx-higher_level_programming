@@ -68,6 +68,10 @@ Try area()
 Throws a valueerror when value is bool
 ::
         >>> bg.integer_validator("my_int", True)
+        Traceback (most recent call last):
+        ...
+        TypeError: my_int must be an integer
+
 
 Throws a valueerror when value is list
 ::
