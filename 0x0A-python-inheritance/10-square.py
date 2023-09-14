@@ -7,59 +7,7 @@ Author: Nafeesah
 """
 
 
-class BaseGeometry():
-    """
-    A class named BaseGeometry.
-
-    Attribute:
-        name(str): name of geom
-        value(int): value of name
-
-    Method:
-        area(): computes area of geometry
-        integer_validator(): validate if value is an integer or not
-    """
-
-    def area(self):
-        """To check area of geometry"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validates value"""
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-
-
-class Rectangle(BaseGeometry):
-    """
-    A class Rectangle inherited from BaseGeometry
-
-    Attributes:
-        width(int): width of rectangle
-        height(int): height of rectangle
-
-    Methods:
-        None
-
-    """
-
-    def __init__(self, width, height):
-        """ Initializes private attributes """
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-
-        self.__width = width
-        self.__height = height
-
-    def area(self):
-        """ Calculates the area of the Rectangle """
-        return (self.__width * self.__height)
-
-    def __str__(self):
-        """ String representation of the Class"""
-        return f"[Rectangle] {self.__width}/{self.__height}"
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
@@ -71,7 +19,6 @@ class Square(Rectangle):
 
     Methods:
         area(): area of square
-    
     """
 
     def __init__(self, size):
@@ -79,7 +26,7 @@ class Square(Rectangle):
         self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
-        
+
     def area(self):
         """calculate the area"""
         return (self.__size * self.__size)
