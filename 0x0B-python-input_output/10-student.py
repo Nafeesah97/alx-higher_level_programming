@@ -29,6 +29,6 @@ class Student:
         json_dat = {}
         if type(attrs) is list:
             for item in attrs:
-                json_dat.append(item)
+                json_dat[item] = self.item
             return json_dat
         return (self.__dict__)
