@@ -19,15 +19,12 @@ Author: Nafeesah
 filename = "add_item.json"
 num_args = len(sys.argv)
 ls = []
-if num_args == 1:
-    text = ls
-if num_args > 1:
-    i = 1
-    while i < num_args:
-        ls.append(sys.argv[i])
-        text = ls
-        i += 1
 
+i = 1
+while i < num_args:
+    ls.append(sys.argv[i])
+    i += 1
+text = ls
 save_to_json_file(text, filename)
 my_set = load_from_json_file(filename)
 print(my_set)
