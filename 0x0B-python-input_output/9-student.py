@@ -6,7 +6,7 @@ Author: Nafeesah
 """
 
 
-class Student(self):
+class Student:
     """
     a class called student
 
