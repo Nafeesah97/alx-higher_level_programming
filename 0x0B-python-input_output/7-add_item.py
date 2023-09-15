@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 """importing sys to get args"""
 import sys
-
-"""
-importing json to deserialize
-"""
 import json
 
 """import modules needed"""
@@ -12,7 +8,7 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 """
-This module contains a file that can convert 
+This module contains a file that can convert
 to/from json file
 Author: Nafeesah
 """
@@ -30,7 +26,7 @@ try:
         content = f.read()
     if len(content):
         text = load_from_json_file(filename)
-except:
+except Exception:
     text = []
 
 for items in ls:
