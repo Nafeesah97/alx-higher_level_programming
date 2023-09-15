@@ -2,7 +2,7 @@
 """
 importing json to serialize
 """
-import json
+#import json
 
 """
 This module contains a function
@@ -14,5 +14,5 @@ Author: Nafeesah
 def class_to_json(obj):
     """function to convert instance attributes to json """
     data = obj.__dict__
-    json_data = json.dumps(data)
-    return json_data
+    #json_data = json.dumps(data)
+    return data
