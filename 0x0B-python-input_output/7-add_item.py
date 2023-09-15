@@ -24,7 +24,16 @@ i = 1
 while i < num_args:
     ls.append(sys.argv[i])
     i += 1
-text = ls
-save_to_json_file(text, filename)
-my_set = load_from_json_file(filename)
-print(my_set)
+
+try:
+    with open(filename, "r") as f:
+        content = f.read()
+    if len(content):
+        text = load_from_json_file(filename)
+except:
+    text = []
+
+for items in ls:
+    text.append(items)
+
+save_to_json_file(items, filename)
