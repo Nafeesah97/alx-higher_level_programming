@@ -36,4 +36,4 @@ except:
 for items in ls:
     text.append(items)
 
-save_to_json_file(items, filename)
+save_to_json_file(text, filename)
