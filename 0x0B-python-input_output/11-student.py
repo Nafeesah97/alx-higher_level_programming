@@ -33,7 +33,7 @@ class Student:
                     json_dat[item] = self.__dict__[item]
             return json_dat
         return (self.__dict__)
-    
+
     def reload_from_json(self, json):
         """a function to convert from json to data"""
         for key, value in json.items():
