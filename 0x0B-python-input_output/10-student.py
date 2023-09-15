@@ -29,6 +29,7 @@ class Student:
         json_dat = {}
         if type(attrs) is list:
             for item in attrs:
-                json_dat[item] = self.__dict__(item)
+                if item in self.__dict__:
+                    json_dat[item] = self.__dict__[item]
             return json_dat
         return (self.__dict__)
