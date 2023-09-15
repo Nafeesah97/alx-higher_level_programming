@@ -14,7 +14,7 @@ class Student:
         first_name(str): The first name of student
         last_name(str): The family name of student
         age(int): The age of student
-    
+
         Methods:
             to_json(): retrieves a dictionary representation of a Student
     """
@@ -27,4 +27,3 @@ class Student:
     def to_json(self):
         """a function for class to json"""
         return (self.__dict__)
-    
