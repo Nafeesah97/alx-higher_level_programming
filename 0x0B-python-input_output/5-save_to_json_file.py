@@ -15,6 +15,7 @@ def save_to_json_file(my_obj, filename):
     """A function to convert to json and write into a file"""
     try:
         with open(filename, mode="w") as file:
-            json.dump(my_obj, file)
+            data = json.dump(my_obj, file)
+            return data
     except:
         pass
