@@ -26,6 +26,7 @@ if num_args > 1:
     while i < num_args:
         ls.append(sys.argv[i])
         text = ls
+        i += 1
 
 save_to_json_file(text, filename)
 my_set = load_from_json_file(filename)
