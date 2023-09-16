@@ -8,8 +8,8 @@ This module contains function for pascal triangle
 def pascal_triangle(n):
     """returns a list of lists of integers representing Pascals triangle"""
     res = []
-    p = []
     for i in range(n):
+        p = []
         for j in range(i + 1):
             if j == 0 or j == i:
                 p.append(1)
