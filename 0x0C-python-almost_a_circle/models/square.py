@@ -149,7 +149,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """to initialize object instances"""
-        super().__init__(id, x, y, size, size)
+        super().__init__(size, size, x, y, id)
     
     @property
     def size(self):
