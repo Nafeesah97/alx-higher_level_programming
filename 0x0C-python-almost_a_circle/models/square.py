@@ -150,6 +150,20 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """to initialize object instances"""
         super().__init__(id, x, y, size, size)
+    
+    @property
+    def size(self):
+        return self.width
+    
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        
+        if value <= 0:
+            raise ValueError("size must be > 0")
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """Overloading"""
