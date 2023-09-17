@@ -132,3 +132,26 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+class Square(Rectangle):
+    """
+    A class named square inherited from Rectangle
+
+    Attributes:
+        size(int): length of one side of square
+        x(int): the horizontal axis
+        y(int): the vertical axis
+        id(int): the id of the class instance
+
+        Methods:
+            None:
+    """
+
+    def __init__(self, size, x=0, y=0, id=None):
+        """to initialize object instances"""
+        super().__init__(id, x, y, width=size, height=size)
+
+    def __str__(self):
+        """Overloading"""
+        return f"[Square] ({self.id}) {self.__x}/{self.__y} - {self.__width}"
+    
