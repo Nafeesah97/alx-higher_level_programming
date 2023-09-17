@@ -135,4 +135,17 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """To return dictionary containing attributes"""
-        return (self.__dict__)
+        dic = {}
+        for key, value in self.__dict__.items():
+            if key == self.id:
+                key = 'id'
+            if key == self.__width:
+                key = 'width'
+            if key == self.__height:
+                key == 'height'
+            if key == self.__x:
+                key = 'x'
+            if key == self.__y:
+                key = 'y'
+            dic[key] = value
+        return (dic)
