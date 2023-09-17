@@ -147,5 +147,5 @@ class Rectangle(Base):
                 key = 'x'
             if key == self.__y:
                 key = 'y'
-            dic[key] = value
+        dic[key] = value
         return (dic)
