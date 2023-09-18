@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""to serialise/deserialise"""
+import json
 """
 This module contains the class base that
 is used to instantiate the id
@@ -27,3 +28,13 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """returns the JSON string representation of list_dictionaries"""
+        if list_dictionaries is None or list_dictionaries == []:
+            json_data = []
+        else:
+            json_data = json.dumps(list_dictionaries)
+        return json_data
+    
