@@ -57,9 +57,17 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set"""
-        obj = cls(1)
-        obj.update(**dictionary)
-        return obj
+        if issubclass(cls, Base):
+            if cls.__name__ == "Base":
+                return Base(dictionary.get("id", None))
+
+            if cls.__name__ == "Square":
+                obj = cls(1)
+            else:
+                obj = cls(1, 1)
+
+            obj.update(**dictionary)
+            return obj
     
     @classmethod
     def load_from_file(cls):
