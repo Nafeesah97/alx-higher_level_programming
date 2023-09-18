@@ -33,31 +33,22 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
-        if list_dictionaries is None or list_dictionaries == []:
-            json_data = []
-        else:
-            json_data = json.dumps(list_dictionaries)
-        return json_data
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            list_dictionaries = []
+        return (json.dumps(list_dictionaries))
 
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
+        if list_objs is None:
+            list_objs = []
         with open(f"{cls.__name__}.json", "w") as file:
-            if list_objs is None:
-                file.write("[]")
-            else:
-                list_dict = []
-                for obj in list_objs:
-                    list_dict.append(obj.to_dictionary())
-
-                string = cls.to_json_string(list_dict)
-
-                file.write(string)
+                file.write(cls.to_json_string(list_objs))
 
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation"""
-        if json_string is None or json_string == []:
+        if json_string is None or json_string == "":
             string_data = []
         else:
             string_data = json.loads(json_string)
@@ -66,17 +57,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set"""
-        if issubclass(cls, Base):
-            if cls.__name__ == "Base":
-                return Base(dictionary.get("id", None))
-            
-            if cls.__name__ == "Square":
-                obj = cls(1)
-            else:
-                obj = cls(1, 1)
-
-            obj.update(**dictionary)
-            return obj
+        if cls.__name__ == "Square":
+            obj = cls(1)
+        else:
+            obj = cls(1, 1)
+        obj.update(**dictionary)
+        return obj
     
     @classmethod
     def load_from_file(cls):
