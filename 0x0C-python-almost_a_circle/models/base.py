@@ -43,9 +43,10 @@ class Base:
         if list_objs is None:
             list_objs = []
         filename = f"{cls.__name__}.json"
+        objects_to_json = [obj.to_dictionary() for obj in list_objs]
+    
         with open(filename, "w") as file:
-            file.write(cls.to_json_string([obj.to_dictionary()
-                                       for obj in list_objs]))
+            file.write(cls.to_json_string(objects_to_json))
 
     @staticmethod
     def from_json_string(json_string):
@@ -70,7 +71,7 @@ class Base:
 
             obj.update(**dictionary)
             return obj
-    
+
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
