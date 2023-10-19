@@ -1,0 +1,1 @@
+-- This project is to illustrate better basic sql queries
