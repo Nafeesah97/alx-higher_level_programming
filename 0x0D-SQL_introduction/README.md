@@ -1,0 +1,1 @@
+- A project to demonstrate basic understanding of SQL using MYSQL
