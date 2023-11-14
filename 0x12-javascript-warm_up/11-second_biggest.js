@@ -6,5 +6,5 @@ if (args.length <= 1) {
 } else {
   const num = args.map(Number);
   const sorNum = num.sort((a, b) => a - b);
-  console.log(sorNum[1]);
+  console.log(sorNum[sorNum.length - 2]);
 }
