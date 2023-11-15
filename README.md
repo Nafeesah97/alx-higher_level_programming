@@ -1,1 +1,1 @@
-0x00. Python - Hello, World
+- This contains project that illustrates using higher level programming languages
