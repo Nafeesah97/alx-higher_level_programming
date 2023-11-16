@@ -34,6 +34,9 @@ module.exports = Rectangle;
 
 class Square extends Rectangle {
   constructor (size) {
+    if (!Number.isInteger(size) || size <= 0 ) {
+        return `${this.constructor.name} {}`;
+    }
     super();
     this.height = size;
     this.width = size;
