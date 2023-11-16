@@ -1,10 +1,6 @@
 #!/usr/bin/node
+let i = 0;
 exports.logMe = function (item) {
-  let i = 0;
-
-  function print () {
-    console.log(i + ': ' + item);
-    i++;
-  }
-  return print;
+  console.log(i + ': ' + item);
+  i++;
 };
