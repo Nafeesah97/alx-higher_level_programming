@@ -1,0 +1,1 @@
+- This projects contains task done to understand how to use ORM in python
