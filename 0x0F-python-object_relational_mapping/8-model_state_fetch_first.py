@@ -18,8 +18,8 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
     query = session.query(State).order_by(State.id)
-    for row in query.first():
-        if (len(row) == 0):
-            print('Nothing')
-        else:
-            print('{}: {}'.format(row.id, row.name))
+    row = query.first()
+    if (row is None):
+        print('Nothing')
+    else:
+        print('{}: {}'.format(row.id, row.name))
