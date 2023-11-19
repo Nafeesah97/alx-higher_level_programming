@@ -19,4 +19,7 @@ if __name__ == "__main__":
     session = Session()
     query = session.query(State).order_by(State.id)
     for row in query.first():
-        print('{}: {}'.format(row.id, row.name))
+        if (len(row) == 0):
+            print('Nothing')
+        else:
+            print('{}: {}'.format(row.id, row.name))
