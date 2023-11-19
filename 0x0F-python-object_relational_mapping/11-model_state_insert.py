@@ -17,9 +17,10 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    state_added = 'Louisiana'
-    session.add_all(State(name=state_added))
+    state_added = State(name='Louisiana')
+    session.add(state_added)
     session.commit()
-    query = session.query(State).filter(State.name==state_added)
+    state_s = 'Louisiana'
+    query = session.query(State).filter(State.name == state_s)
     row = query.first()
     print('{}'.format(row.id))
