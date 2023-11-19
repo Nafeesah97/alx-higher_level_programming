@@ -24,13 +24,10 @@ if __name__ == "__main__":
     cursor.execute("SELECT a.name FROM cities AS a\
                    LEFT JOIN states AS b\
                    ON a.state_id = b.id\
-                   WHERE a.name = %s\
+                   WHERE b.name = %s\
                    ORDER BY a.id", (word,))
     rows = cursor.fetchall()
-    if (len(rows) != 0):
-        for row in rows:
-            print('{}'.format(row),end=',')
-    else:
-        print('\n')
+    rows = [row[0] for row in rows]
+    print(*rows, sep=", ")
     cursor.close()
     db.close()
