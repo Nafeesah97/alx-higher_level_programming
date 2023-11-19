@@ -2,8 +2,9 @@
 """
 Importing the necessary libraries
 """
-from sqlalchemy import MetaData, Column, Integer, String
-from model_state import Base
+from sqlalchemy import MetaData, Column, Integer, String, ForeignKey
+from model_state import Base, State
+from sqlalchemy.orm import relationship
 
 """
 This module contains a script that contains
