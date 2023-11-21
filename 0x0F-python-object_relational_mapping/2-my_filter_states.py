@@ -22,7 +22,7 @@ if __name__ == "__main__":
             )
     cursor = db.cursor()
     cursor.execute(
-            "SELECT id, name FROM states WHERE name = '{}'\
+            "SELECT id, name FROM states WHERE BINARY name = '{}'\
             ORDER BY id".format(word)
             )
     rows = cursor.fetchall()
