@@ -15,4 +15,4 @@ if __name__ == "__main__":
     with req.urlopen(pos) as response:
         html = response.read()
         res = html.decode('utf-8')
-    print('Your email is: {}'.format(res[email]))
+    print(res)
