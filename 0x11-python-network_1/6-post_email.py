@@ -9,4 +9,4 @@ if __name__ == "__main__":
     email_ad = sys.argv[2]
     r = requests.post(url, data={'email': email_ad})
     re = r.text
-    print('Your email is: {}'.format(re))
+    print('{}'.format(re))
