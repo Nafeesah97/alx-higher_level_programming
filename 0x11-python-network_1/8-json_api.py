@@ -6,11 +6,10 @@ import sys
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
+    val = {"q": ""}
     if len(sys.argv) > 1:
-        val = sys.argv[1]
-    else:
-        val = ""
-    r = requests.post(url, data={"q": val})
+        val["q"] = sys.argv[1]
+    r = requests.post(url, data=val)
     js = r.status_code()
     if js == 204:
         print("No result")
@@ -18,7 +17,7 @@ if __name__ == "__main__":
         try:
             res = r.json()
             if len(res) > 0:
-                print("[{}] {}".format(res[0]["id"], res[0]["name"]))
+                print("[{}] {}".format(res["id"], res["name"]))
             else:
                 print("No result")
         except Exception as e:
