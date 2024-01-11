@@ -1,0 +1,1 @@
+- This projectis to illustrate how to use jquery
